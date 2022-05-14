@@ -2,13 +2,15 @@ namespace QuantumWorldWinForm
 {
     public partial class QuantumWorldForm : Form
     {
+        
         public QuantumWorldForm()
         {
-            
             InitializeComponent();
             hideAllViews();
             overviewView1.Show();
             overviewView1.BringToFront();
+   
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -29,6 +31,7 @@ namespace QuantumWorldWinForm
             hideAllViews();
             buildingsView1.Show();
             buildingsView1.BringToFront();
+            
         }
 
         private void DocksButton_Click(object sender, EventArgs e)
@@ -76,6 +79,12 @@ namespace QuantumWorldWinForm
             overviewView1.Hide();
             researchView1.Hide();
             resourcesView1.Hide();
+        }
+
+
+        private void Sample_data()
+        {
+            
         }
     }
 }

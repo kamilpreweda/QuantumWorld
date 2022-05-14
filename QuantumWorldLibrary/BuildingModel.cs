@@ -13,6 +13,9 @@ namespace QuantumWorldLibrary
         public int BuildingLevel { get; set; }
         public DateTime BuildingTimeToUpgrade { get; set; }
         public int BuildingResourceMultiplier { get; set; }
+        public List<ResourceModel> BuildingCost { get; set; }
     }
+
+
 
 }
