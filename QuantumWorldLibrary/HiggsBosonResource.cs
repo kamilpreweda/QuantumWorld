@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace QuantumWorldLibrary
 {
-    public class CarbonFiberResource : ResourceModel
+    public class HiggsBosonResource : ResourceModel
     {
-        public CarbonFiberResource()
+        public HiggsBosonResource()
         {
-            ResourceName = "Carbon Fiber";
-            ResourceValue = 500;
+            ResourceName = "Higgs Boson";
+            ResourceValue = 0;
         }
     }
-
-   
 }

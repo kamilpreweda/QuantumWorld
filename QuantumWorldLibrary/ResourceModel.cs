@@ -8,9 +8,9 @@ namespace QuantumWorldLibrary
 {
     public class ResourceModel
     {
-        public string ResourceName { get; set; }
-        public int ResourceBaseStat { get; set; }
-        public int ResourceMultiplier { get; set; }
-        public int ResourceValue { get; set; }
+        public string? ResourceName { get; set; }
+        public float ResourceBaseStat { get; set; }
+        public float ResourceMultiplier { get; set; }
+        public float ResourceValue { get; set; }
     }
 }

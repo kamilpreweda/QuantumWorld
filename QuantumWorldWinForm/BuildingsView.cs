@@ -20,6 +20,10 @@ namespace QuantumWorldWinForm
 
             InitializeComponent();
             CarbonFiberLevelLabel.Text = $"Level: {CarbonFiberbld.BuildingLevel}";
+            CarbonFiberCostLabel.Text = $"Carbon Fiber: {(CarbonFiberbld.BuildingCost.ElementAt(0).ResourceValue)-400} / " +
+                                        $"Quantum Glass: {(CarbonFiberbld.BuildingCost.ElementAt(1).ResourceValue)-200} / " +
+                                        $"Higgs Boson: {CarbonFiberbld.BuildingCost.ElementAt(2).ResourceValue} / " +
+                                        $"Required Energy: {(CarbonFiberbld.BuildingCost.ElementAt(3).ResourceValue)-90}";
 
         }
 
@@ -28,10 +32,18 @@ namespace QuantumWorldWinForm
         public void CarbonFiberUpgradeButton_Click(object sender, EventArgs e)
         {
             CarbonFiberbld.BuildingLevel++;
-            CarbonFiberbld.BuildingCost.First().ResourceValue *= 2;
+            CarbonFiberbld.BuildingCost.ElementAt(0).ResourceValue *= (float)1.1;
+            CarbonFiberbld.BuildingCost.ElementAt(1).ResourceValue *= (float)1.09;
+            CarbonFiberbld.BuildingCost.ElementAt(2).ResourceValue *= (float)1.08;
+            CarbonFiberbld.BuildingCost.ElementAt(3).ResourceValue *= (float)1.07;
+
             CarbonFiberLevelLabel.Text = $"Level: {CarbonFiberbld.BuildingLevel}";
-            CarbonFiberCostLabel.Text = $"Cost: {CarbonFiberbld.BuildingCost.First().ResourceValue}";
-           
+            CarbonFiberCostLabel.Text = $"Carbon Fiber: {(CarbonFiberbld.BuildingCost.ElementAt(0).ResourceValue) -400} / " +
+                                        $"Quantum Glass: {(CarbonFiberbld.BuildingCost.ElementAt(1).ResourceValue) -200} / " +
+                                        $"Higgs Boson: {CarbonFiberbld.BuildingCost.ElementAt(2).ResourceValue} / " +
+                                        $"Required Energy: {(CarbonFiberbld.BuildingCost.ElementAt(3).ResourceValue)-90}";
+
+
 
         }
 

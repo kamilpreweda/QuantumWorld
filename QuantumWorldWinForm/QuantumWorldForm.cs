@@ -1,3 +1,5 @@
+using QuantumWorldLibrary;
+
 namespace QuantumWorldWinForm
 {
     public partial class QuantumWorldForm : Form
@@ -6,6 +8,20 @@ namespace QuantumWorldWinForm
         public QuantumWorldForm()
         {
             InitializeComponent();
+
+            CarbonFiberResource carbonFiber = new CarbonFiberResource();
+            QuantumGlassResource quantumGlass = new QuantumGlassResource();
+            HiggsBosonResource higgsBoson = new HiggsBosonResource();
+            SolarEnergyResource solarEnergy = new SolarEnergyResource();
+
+
+
+            CarbonFiberLabel.Text = $"Carbon Fiber: {carbonFiber.ResourceValue}";
+            QuantumGlassLabel.Text = $"Quantum Glass: {quantumGlass.ResourceValue}";
+            HiggsBosonLabel.Text = $"Higgs Boson: {higgsBoson.ResourceValue}";
+            SolarEnergyLabel.Text = $"Solar Energy: {solarEnergy.ResourceValue}";
+
+
             hideAllViews();
             overviewView1.Show();
             overviewView1.BringToFront();

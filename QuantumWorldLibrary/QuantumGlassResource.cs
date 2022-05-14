@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace QuantumWorldLibrary
 {
-    public class CarbonFiberResource : ResourceModel
-    {
-        public CarbonFiberResource()
+    public class QuantumGlassResource : ResourceModel
+    { 
+        public QuantumGlassResource()
         {
-            ResourceName = "Carbon Fiber";
-            ResourceValue = 500;
+            ResourceName = "Quantum Glass";
+            ResourceValue = 250;
         }
     }
-
-   
 }
+
