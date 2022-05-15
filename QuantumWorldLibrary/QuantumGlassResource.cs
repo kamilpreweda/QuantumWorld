@@ -12,6 +12,8 @@ namespace QuantumWorldLibrary
         {
             ResourceName = "Quantum Glass";
             ResourceValue = 250;
+            ResourceBaseStat = 250;
+            ResourceMultiplier = (float)1.15;
         }
     }
 }

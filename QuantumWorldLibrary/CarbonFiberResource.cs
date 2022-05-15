@@ -12,6 +12,8 @@ namespace QuantumWorldLibrary
         {
             ResourceName = "Carbon Fiber";
             ResourceValue = 500;
+            ResourceBaseStat = 500;
+            ResourceMultiplier = (float)1.15;
         }
     }
 

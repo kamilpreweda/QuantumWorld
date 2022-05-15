@@ -12,6 +12,8 @@ namespace QuantumWorldLibrary
         {
             ResourceName = "Higgs Boson";
             ResourceValue = 0;
+            ResourceBaseStat = 50;
+            ResourceMultiplier = (float)1.15;
         }
     }
 }

@@ -12,6 +12,8 @@ namespace QuantumWorldLibrary
         {
             ResourceName = "Solar Energy";
             ResourceValue = 100;
+            ResourceBaseStat = 100;
+            ResourceMultiplier = (float)1.15;
         }
     }
 }
