@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace QuantumWorldLibrary
 {
-    public class CarbonFiberBuilding : BuildingModel
+    public class QuantumGlassBuilding : BuildingModel
     {
-     
-        public CarbonFiberBuilding()
+
+        public QuantumGlassBuilding()
         {
-            BuildingName = "Carbon Fiber Building";
-            BuildingDescription = "Carbon Fiber Building Description";
+            BuildingName = "Quantum Glass Building";
+            BuildingDescription = "Quantum Glass Building Description";
             BuildingLevel = 0;
             BuildingCost = new List<ResourceModel>()
             {
@@ -22,10 +22,8 @@ namespace QuantumWorldLibrary
                 new SolarEnergyResource(),
             };
 
+        }
     }
-            
-    }
-
-  
-
 }
+
+    

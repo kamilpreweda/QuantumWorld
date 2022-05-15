@@ -13,17 +13,26 @@ namespace QuantumWorldWinForm
     public partial class BuildingsView : UserControl
     {
         QuantumWorldLibrary.CarbonFiberBuilding CarbonFiberbld = new QuantumWorldLibrary.CarbonFiberBuilding();
+        QuantumWorldLibrary.QuantumGlassBuilding QuantumGlassbld = new QuantumWorldLibrary.QuantumGlassBuilding();
 
 
         public BuildingsView()
         {
 
             InitializeComponent();
-            CarbonFiberLevelLabel.Text = $"Level: {CarbonFiberbld.BuildingLevel}";
-            CarbonFiberCostLabel.Text = $"Carbon Fiber: {(CarbonFiberbld.BuildingCost.ElementAt(0).ResourceValue)-400} / " +
-                                        $"Quantum Glass: {(CarbonFiberbld.BuildingCost.ElementAt(1).ResourceValue)-200} / " +
-                                        $"Higgs Boson: {CarbonFiberbld.BuildingCost.ElementAt(2).ResourceValue} / " +
-                                        $"Required Energy: {(CarbonFiberbld.BuildingCost.ElementAt(3).ResourceValue)-90}";
+            CarbonFiberNameLabel.Text = $"{CarbonFiberbld.BuildingName}";
+            CarbonFiberLevelLabel.Text = $"Lvl: {CarbonFiberbld.BuildingLevel}";
+            CarbonFiberCostLabel.Text = $"CFI: {(CarbonFiberbld.BuildingCost.ElementAt(0).ResourceValue)-400} / " +
+                                        $"QGI: {(CarbonFiberbld.BuildingCost.ElementAt(1).ResourceValue)-200} / " +
+                                        $"HBI: {CarbonFiberbld.BuildingCost.ElementAt(2).ResourceValue} / " +
+                                        $"SEI: {(CarbonFiberbld.BuildingCost.ElementAt(3).ResourceValue)-90}";
+
+            QuantumGlassNameLabel.Text = $"{QuantumGlassbld.BuildingName}";
+            QuantumGlassLevelLabel.Text = $"Lvl: {QuantumGlassbld.BuildingLevel}";
+            QuantumGlassCostLabel.Text = $"CFI: {(QuantumGlassbld.BuildingCost.ElementAt(0).ResourceValue) - 350} / " +
+                                         $"QGI: {(QuantumGlassbld.BuildingCost.ElementAt(1).ResourceValue) - 100} / " +
+                                         $"HBI: {QuantumGlassbld.BuildingCost.ElementAt(2).ResourceValue} / " +
+                                         $"SEI: {(QuantumGlassbld.BuildingCost.ElementAt(3).ResourceValue) - 85}";
 
         }
 
@@ -37,17 +46,39 @@ namespace QuantumWorldWinForm
             CarbonFiberbld.BuildingCost.ElementAt(2).ResourceValue *= (float)1.08;
             CarbonFiberbld.BuildingCost.ElementAt(3).ResourceValue *= (float)1.07;
 
-            CarbonFiberLevelLabel.Text = $"Level: {CarbonFiberbld.BuildingLevel}";
-            CarbonFiberCostLabel.Text = $"Carbon Fiber: {(CarbonFiberbld.BuildingCost.ElementAt(0).ResourceValue) -400} / " +
-                                        $"Quantum Glass: {(CarbonFiberbld.BuildingCost.ElementAt(1).ResourceValue) -200} / " +
-                                        $"Higgs Boson: {CarbonFiberbld.BuildingCost.ElementAt(2).ResourceValue} / " +
-                                        $"Required Energy: {(CarbonFiberbld.BuildingCost.ElementAt(3).ResourceValue)-90}";
+            CarbonFiberLevelLabel.Text = $"Lvl: {CarbonFiberbld.BuildingLevel}";
+            CarbonFiberCostLabel.Text = $"CFI: {(CarbonFiberbld.BuildingCost.ElementAt(0).ResourceValue) -400} / " +
+                                        $"QGI: {(CarbonFiberbld.BuildingCost.ElementAt(1).ResourceValue) -200} / " +
+                                        $"HBI: {CarbonFiberbld.BuildingCost.ElementAt(2).ResourceValue} / " +
+                                        $"SEI: {(CarbonFiberbld.BuildingCost.ElementAt(3).ResourceValue)-90}";
+        }
 
+        public void QuantumGlassUpgradeButton_Click(object sender, EventArgs e)
+        {
+            QuantumGlassbld.BuildingLevel++;
+            QuantumGlassbld.BuildingCost.ElementAt(0).ResourceValue *= (float)1.1;
+            QuantumGlassbld.BuildingCost.ElementAt(1).ResourceValue *= (float)1.09;
+            QuantumGlassbld.BuildingCost.ElementAt(2).ResourceValue *= (float)1.08;
+            QuantumGlassbld.BuildingCost.ElementAt(3).ResourceValue *= (float)1.07;
 
-
+            QuantumGlassLevelLabel.Text = $"Lvl: {QuantumGlassbld.BuildingLevel}";
+            QuantumGlassCostLabel.Text = $"CFI: {(QuantumGlassbld.BuildingCost.ElementAt(0).ResourceValue) - 350} / " +
+                                         $"QGI: {(QuantumGlassbld.BuildingCost.ElementAt(1).ResourceValue) - 100} / " +
+                                         $"HBI: {QuantumGlassbld.BuildingCost.ElementAt(2).ResourceValue} / " +
+                                         $"SEI: {(QuantumGlassbld.BuildingCost.ElementAt(3).ResourceValue) - 85}";
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BuildingsView_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CarbonFiberCostLabel_Click(object sender, EventArgs e)
         {
 
         }
