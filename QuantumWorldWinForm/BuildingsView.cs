@@ -17,7 +17,8 @@ namespace QuantumWorldWinForm
         QuantumGlassBuilding QuantumGlassbld = new QuantumGlassBuilding();
         HiggsBosonBuilding HiggsBosonbld = new HiggsBosonBuilding();
         SolarEnergyBuilding SolarEnergybld = new SolarEnergyBuilding();
-
+        RobotFactoryBuilding RobotFactorybld = new RobotFactoryBuilding();
+        
 
         public BuildingsView()
         {
@@ -50,6 +51,14 @@ namespace QuantumWorldWinForm
                                          $"QGI: {(SolarEnergybld.BuildingCost.ElementAt(1).ResourceValue) - 150} / " +
                                          $"HBI: {SolarEnergybld.BuildingCost.ElementAt(2).ResourceValue} / " +
                                          $"SEI: {(SolarEnergybld.BuildingCost.ElementAt(3).ResourceValue) - 100}";
+
+            RobotFactoryNameLabel.Text = $"{RobotFactorybld.BuildingName}";
+            RobotFactoryLevelLabel.Text = $"Lvl: {RobotFactorybld.BuildingLevel}";
+            RobotFactoryCostLabel.Text = $"CFI: {(RobotFactorybld.BuildingCost.ElementAt(0).ResourceValue) - 100} / " +
+                                         $"QGI: {(RobotFactorybld.BuildingCost.ElementAt(1).ResourceValue) - 100} / " +
+                                         $"HBI: {(RobotFactorybld.BuildingCost.ElementAt(2).ResourceValue) + 50} / " +
+                                         $"SEI: {(RobotFactorybld.BuildingCost.ElementAt(3).ResourceValue) - 100}";
+
         }
 
 
@@ -63,10 +72,11 @@ namespace QuantumWorldWinForm
             CarbonFiberbld.BuildingCost.ElementAt(3).ResourceValue *= (float)1.07;
 
             CarbonFiberLevelLabel.Text = $"Lvl: {CarbonFiberbld.BuildingLevel}";
-            CarbonFiberCostLabel.Text = $"CFI: {(CarbonFiberbld.BuildingCost.ElementAt(0).ResourceValue) -400} / " +
-                                        $"QGI: {(CarbonFiberbld.BuildingCost.ElementAt(1).ResourceValue) -200} / " +
+            CarbonFiberCostLabel.Text = $"CFI: {(CarbonFiberbld.BuildingCost.ElementAt(0).ResourceValue) - 400} / " +
+                                        $"QGI: {(CarbonFiberbld.BuildingCost.ElementAt(1).ResourceValue) - 200} / " +
                                         $"HBI: {CarbonFiberbld.BuildingCost.ElementAt(2).ResourceValue} / " +
-                                        $"SEI: {(CarbonFiberbld.BuildingCost.ElementAt(3).ResourceValue)-90}";
+                                        $"SEI: {(CarbonFiberbld.BuildingCost.ElementAt(3).ResourceValue) - 90}";
+
         }
 
         public void QuantumGlassUpgradeButton_Click(object sender, EventArgs e)
@@ -113,6 +123,21 @@ namespace QuantumWorldWinForm
                                          $"HBI: {SolarEnergybld.BuildingCost.ElementAt(2).ResourceValue} / " +
                                          $"SEI: {(SolarEnergybld.BuildingCost.ElementAt(3).ResourceValue) - 100}";
 
+        }
+
+        public void RobotFactoryUpgradeButton_Click(object sender, EventArgs e)
+        {
+            RobotFactorybld.BuildingLevel++;
+            RobotFactorybld.BuildingCost.ElementAt(0).ResourceValue *= (float)1.15;
+            RobotFactorybld.BuildingCost.ElementAt(1).ResourceValue *= (float)1.15;
+            RobotFactorybld.BuildingCost.ElementAt(2).ResourceValue *= (float)1.15;
+            //          SolarEnergybld.BuildingCost.ElementAt(3).ResourceValue *= (float)1.09;
+
+            RobotFactoryLevelLabel.Text = $"Lvl: {RobotFactorybld.BuildingLevel}";
+            RobotFactoryCostLabel.Text = $"CFI: {(RobotFactorybld.BuildingCost.ElementAt(0).ResourceValue) - 100} / " +
+                                         $"QGI: {(RobotFactorybld.BuildingCost.ElementAt(1).ResourceValue) - 100} / " +
+                                         $"HBI: {(RobotFactorybld.BuildingCost.ElementAt(2).ResourceValue) + 50} / ";
+            //                             $"SEI: {(RobotFactorybld.BuildingCost.ElementAt(3).ResourceValue) - 100}";
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -243,6 +243,7 @@
             this.RobotFactoryUpgradeButton.TabIndex = 18;
             this.RobotFactoryUpgradeButton.Text = "Upgrade";
             this.RobotFactoryUpgradeButton.UseVisualStyleBackColor = true;
+            this.RobotFactoryUpgradeButton.Click += new System.EventHandler(this.RobotFactoryUpgradeButton_Click);
             // 
             // RobotFactoryLevelLabel
             // 
