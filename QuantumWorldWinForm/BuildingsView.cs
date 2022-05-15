@@ -14,6 +14,7 @@ namespace QuantumWorldWinForm
     {
         QuantumWorldLibrary.CarbonFiberBuilding CarbonFiberbld = new QuantumWorldLibrary.CarbonFiberBuilding();
         QuantumWorldLibrary.QuantumGlassBuilding QuantumGlassbld = new QuantumWorldLibrary.QuantumGlassBuilding();
+        QuantumWorldLibrary.HiggsBosonBuilding HiggsBosonbld = new QuantumWorldLibrary.HiggsBosonBuilding();
 
 
         public BuildingsView()
@@ -34,6 +35,12 @@ namespace QuantumWorldWinForm
                                          $"HBI: {QuantumGlassbld.BuildingCost.ElementAt(2).ResourceValue} / " +
                                          $"SEI: {(QuantumGlassbld.BuildingCost.ElementAt(3).ResourceValue) - 85}";
 
+            HiggsBosonNameLabel.Text = $"{HiggsBosonbld.BuildingName}";
+            HiggsBosonLevelLabel.Text = $"Lvl: {HiggsBosonbld.BuildingLevel}";
+            HiggsBosonCostLabel.Text = $"CFI: {(HiggsBosonbld.BuildingCost.ElementAt(0).ResourceValue) - 250} / " +
+                                         $"QGI: {(HiggsBosonbld.BuildingCost.ElementAt(1).ResourceValue) - 50} / " +
+                                         $"HBI: {HiggsBosonbld.BuildingCost.ElementAt(2).ResourceValue} / " +
+                                         $"SEI: {(HiggsBosonbld.BuildingCost.ElementAt(3).ResourceValue) - 80}";
         }
 
 
@@ -56,16 +63,31 @@ namespace QuantumWorldWinForm
         public void QuantumGlassUpgradeButton_Click(object sender, EventArgs e)
         {
             QuantumGlassbld.BuildingLevel++;
-            QuantumGlassbld.BuildingCost.ElementAt(0).ResourceValue *= (float)1.1;
-            QuantumGlassbld.BuildingCost.ElementAt(1).ResourceValue *= (float)1.09;
-            QuantumGlassbld.BuildingCost.ElementAt(2).ResourceValue *= (float)1.08;
-            QuantumGlassbld.BuildingCost.ElementAt(3).ResourceValue *= (float)1.07;
+            QuantumGlassbld.BuildingCost.ElementAt(0).ResourceValue *= (float)1.11;
+            QuantumGlassbld.BuildingCost.ElementAt(1).ResourceValue *= (float)1.108;
+            QuantumGlassbld.BuildingCost.ElementAt(2).ResourceValue *= (float)1.09;
+            QuantumGlassbld.BuildingCost.ElementAt(3).ResourceValue *= (float)1.08;
 
             QuantumGlassLevelLabel.Text = $"Lvl: {QuantumGlassbld.BuildingLevel}";
             QuantumGlassCostLabel.Text = $"CFI: {(QuantumGlassbld.BuildingCost.ElementAt(0).ResourceValue) - 350} / " +
                                          $"QGI: {(QuantumGlassbld.BuildingCost.ElementAt(1).ResourceValue) - 100} / " +
                                          $"HBI: {QuantumGlassbld.BuildingCost.ElementAt(2).ResourceValue} / " +
                                          $"SEI: {(QuantumGlassbld.BuildingCost.ElementAt(3).ResourceValue) - 85}";
+        }
+
+        public void HiggsBosonUpgradeButton_Click(object sender, EventArgs e)
+        {
+            HiggsBosonbld.BuildingLevel++;
+            HiggsBosonbld.BuildingCost.ElementAt(0).ResourceValue *= (float)1.12;
+            HiggsBosonbld.BuildingCost.ElementAt(1).ResourceValue *= (float)1.12;
+            HiggsBosonbld.BuildingCost.ElementAt(2).ResourceValue *= (float)1.1;
+            HiggsBosonbld.BuildingCost.ElementAt(3).ResourceValue *= (float)1.09;
+
+            HiggsBosonLevelLabel.Text = $"Lvl: {HiggsBosonbld.BuildingLevel}";
+            HiggsBosonCostLabel.Text = $"CFI: {(HiggsBosonbld.BuildingCost.ElementAt(0).ResourceValue) - 250} / " +
+                                         $"QGI: {(HiggsBosonbld.BuildingCost.ElementAt(1).ResourceValue) - 50} / " +
+                                         $"HBI: {HiggsBosonbld.BuildingCost.ElementAt(2).ResourceValue} / " +
+                                         $"SEI: {(HiggsBosonbld.BuildingCost.ElementAt(3).ResourceValue) - 80}";
         }
 
         private void label1_Click(object sender, EventArgs e)

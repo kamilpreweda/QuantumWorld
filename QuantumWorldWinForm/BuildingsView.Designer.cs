@@ -160,6 +160,7 @@
             this.HiggsBosonUpgradeButton.TabIndex = 10;
             this.HiggsBosonUpgradeButton.Text = "Upgrade";
             this.HiggsBosonUpgradeButton.UseVisualStyleBackColor = true;
+            this.HiggsBosonUpgradeButton.Click += new System.EventHandler(this.HiggsBosonUpgradeButton_Click);
             // 
             // HiggsBosonLevelLabel
             // 
