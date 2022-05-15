@@ -7,14 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuantumWorldLibrary;
 
 namespace QuantumWorldWinForm
 {
     public partial class BuildingsView : UserControl
     {
-        QuantumWorldLibrary.CarbonFiberBuilding CarbonFiberbld = new QuantumWorldLibrary.CarbonFiberBuilding();
-        QuantumWorldLibrary.QuantumGlassBuilding QuantumGlassbld = new QuantumWorldLibrary.QuantumGlassBuilding();
-        QuantumWorldLibrary.HiggsBosonBuilding HiggsBosonbld = new QuantumWorldLibrary.HiggsBosonBuilding();
+        CarbonFiberBuilding CarbonFiberbld = new CarbonFiberBuilding();
+        QuantumGlassBuilding QuantumGlassbld = new QuantumGlassBuilding();
+        HiggsBosonBuilding HiggsBosonbld = new HiggsBosonBuilding();
+        SolarEnergyBuilding SolarEnergybld = new SolarEnergyBuilding();
 
 
         public BuildingsView()
@@ -41,6 +43,13 @@ namespace QuantumWorldWinForm
                                          $"QGI: {(HiggsBosonbld.BuildingCost.ElementAt(1).ResourceValue) - 50} / " +
                                          $"HBI: {HiggsBosonbld.BuildingCost.ElementAt(2).ResourceValue} / " +
                                          $"SEI: {(HiggsBosonbld.BuildingCost.ElementAt(3).ResourceValue) - 80}";
+
+            SolarEnergyNameLabel.Text = $"{SolarEnergybld.BuildingName}";
+            SolarEnergyLevelLabel.Text = $"Lvl: {SolarEnergybld.BuildingLevel}";
+            SolarEnergyCostLabel.Text = $"CFI: {(SolarEnergybld.BuildingCost.ElementAt(0).ResourceValue) - 400} / " +
+                                         $"QGI: {(SolarEnergybld.BuildingCost.ElementAt(1).ResourceValue) - 150} / " +
+                                         $"HBI: {SolarEnergybld.BuildingCost.ElementAt(2).ResourceValue} / " +
+                                         $"SEI: {(SolarEnergybld.BuildingCost.ElementAt(3).ResourceValue) - 100}";
         }
 
 
@@ -90,6 +99,22 @@ namespace QuantumWorldWinForm
                                          $"SEI: {(HiggsBosonbld.BuildingCost.ElementAt(3).ResourceValue) - 80}";
         }
 
+        public void SolarEnergyUpgradeButton_Click(object sender, EventArgs e)
+        {
+            SolarEnergybld.BuildingLevel++;
+            SolarEnergybld.BuildingCost.ElementAt(0).ResourceValue *= (float)1.15;
+            SolarEnergybld.BuildingCost.ElementAt(1).ResourceValue *= (float)1.15;
+  //          SolarEnergybld.BuildingCost.ElementAt(2).ResourceValue *= (float)1.1;
+  //          SolarEnergybld.BuildingCost.ElementAt(3).ResourceValue *= (float)1.09;
+
+            SolarEnergyLevelLabel.Text = $"Lvl: {SolarEnergybld.BuildingLevel}";
+            SolarEnergyCostLabel.Text = $"CFI: {(SolarEnergybld.BuildingCost.ElementAt(0).ResourceValue) - 450} / " +
+                                         $"QGI: {(SolarEnergybld.BuildingCost.ElementAt(1).ResourceValue) - 150} / " +
+                                         $"HBI: {SolarEnergybld.BuildingCost.ElementAt(2).ResourceValue} / " +
+                                         $"SEI: {(SolarEnergybld.BuildingCost.ElementAt(3).ResourceValue) - 100}";
+
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -101,6 +126,26 @@ namespace QuantumWorldWinForm
         }
 
         private void CarbonFiberCostLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CarbonFiberLevelLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QuantumGlassLevelLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HiggsBosonLevelLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SolarEnergyLevelLabel_Click(object sender, EventArgs e)
         {
 
         }
